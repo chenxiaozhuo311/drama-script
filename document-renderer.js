@@ -5,7 +5,7 @@ const escape = text => text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').rep
 export function renderDocument(markdown) {
   let section = 0;
   const headings = [];
-  const parser = new Marked({ gfm: true, breaks: false });
+  const parser = new Marked({ gfm: true, breaks: true });
   parser.use({ renderer: {
     heading({ tokens, depth }) {
       const labelHtml = this.parser.parseInline(tokens);
